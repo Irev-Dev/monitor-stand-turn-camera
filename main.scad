@@ -1,6 +1,6 @@
 include <lib/Round-Anything/polyround.scad>
 
-radiusExtrudefn=1;
+radiusExtrudefn=20;
 
 poleBrace = 100;
 poleBraceIR = 30;
@@ -15,6 +15,7 @@ captureNutDepth=2.5;
 cameraMountHoleD=6.5;
 cameraMountClearance=36;
 cameraMountThickness=8;
+cameraMountPlatformSize=20;
 
 wingGap=5;
 wingThickness=8;
@@ -66,17 +67,17 @@ module truss() {
 }
 
 module cameraMount(){
-  translate([0,-armLength,0])rotate([0,0,90])
-    extrudeWithRadius(cameraMountThickness,2,0,radiusExtrudefn)difference(){
+  %translate([0,-armLength,0])rotate([0,0,90])
+    extrudeWithRadius(cameraMountThickness,2,0,radiusExtrudefn)difference(){      
     translate([-cameraMountClearance/2,-cameraMountClearance/2])polygon(polyRound([
-      [0,0,10],
-      [cameraMountClearance, 0, 50],
-      [cameraMountClearance*2, cameraMountClearance/2 - 15/2, 50],
-      [cameraMountClearance*3, cameraMountClearance/2 - 15/2, 0],
-      [cameraMountClearance*3, cameraMountClearance/2 + 15/2, 0],
-      [cameraMountClearance*2, cameraMountClearance/2 + 15/2, 50],
-      [cameraMountClearance, cameraMountClearance, 50],
-      [0, cameraMountClearance, 10],
+        [0,0,10],
+        [cameraMountClearance, 0, 50],
+        [cameraMountClearance*2, cameraMountClearance/2 - armThickness/2, 50],
+        [cameraMountClearance*3, cameraMountClearance/2 - armThickness/2, 0],
+        [cameraMountClearance*3, cameraMountClearance/2 + armThickness/2, 0],
+        [cameraMountClearance*2, cameraMountClearance/2 + armThickness/2, 50],
+        [cameraMountClearance, cameraMountClearance, 50],
+        [0, cameraMountClearance, 10],
     ], 20));
     circle(d=6.5);
   }
