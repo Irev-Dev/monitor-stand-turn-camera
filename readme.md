@@ -1,5 +1,7 @@
 # Monitor Stand Turn Camera Mount
 
+<img src="https://cdn.thingiverse.com/assets/ea/fb/83/89/57/featured_preview_camera_mount.png" width="100%" align="left"> 
+
 I made this part during a live stream, partly because I needed it for my camera, as well as to demonstrate the [round-anything library](https://github.com/Irev-Dev/Round-Anything).
 
 An [overview of the library can be found here](https://kurthutten.com/blog/round-anything-a-pragmatic-approach-to-openscad-design/).
